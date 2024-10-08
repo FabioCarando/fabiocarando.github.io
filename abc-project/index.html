@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto: Approximate Bayesian Computation (ABC)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .author {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .formula {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .algorithm {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Approximate Bayesian Computation (ABC)</h1>
+    <p class="author">Di Carando Fabio, Dal Ben Simone, Martina Dotti</p>
 
+    <h2>Introduzione</h2>
+    <p>L'Approximate Bayesian Computation (ABC) è un approccio statistico innovativo utilizzato per affrontare problemi di inferenza bayesiana in situazioni complesse dove il calcolo esatto della distribuzione a posteriori è difficile o impossibile.</p>
+
+    <div class="formula">
+        <p>P(θ|Y) = P(Y|θ)P(θ) / P(Y) = P(Y|θ)P(θ) / ∫ P(Y|θ)P(θ) dθ</p>
+    </div>
+
+    <p>Nel framework ABC, la verosimiglianza non viene calcolata direttamente. Invece, viene utilizzata un'approssimazione della verosimiglianza per valutare la discrepanza tra i dati osservati e i dati generati dal modello.</p>
+
+    <h2>Processo di Inferenza ABC</h2>
+    <ol>
+        <li>Campionamento da una distribuzione a priori dei parametri</li>
+        <li>Generazione di dati simulati dal modello generativo usando i parametri campionati</li>
+        <li>Calcolo delle statistiche di sintesi dei dati simulati</li>
+        <li>Confronto delle statistiche di sintesi dei dati osservati con quelle dei dati simulati</li>
+        <li>Se le statistiche di sintesi sono sufficientemente simili, i parametri associati vengono accettati come campioni approssimati dalla distribuzione a posteriori</li>
+        <li>Ripetizione dei passaggi precedenti fino a ottenere un numero sufficiente di campioni approssimati</li>
+    </ol>
+
+    <h2>Algoritmi ABC</h2>
+    <div class="algorithm">
+        <h3>Algoritmo 1: ABC "preistorico"</h3>
+        <pre>
+for i = 1 to N do
+    repeat
+        (a) Generate θ' from the prior distribution π()
+        (b) Generate z from the likelihood f(|θ')
+    until z = y set θi = θ'
+end for
+        </pre>
+    </div>
+
+    <div class="algorithm">
+        <h3>Algoritmo 2: Primo ABC</h3>
+        <pre>
+for i = 1 to N do
+    repeat
+        (a) Generate θ' from the prior distribution π()
+        (b) Generate z from the likelihood f(|θ')
+    until ρ(η(z), η(y)) ≤ ε set θi = θ'
+end for
+        </pre>
+    </div>
+
+    <h2>Miglioramenti Sequenziali: ABC-SMC</h2>
+    <p>Le tecniche sequenziali possono migliorare l'efficienza dell'algoritmo ABC apprendendo sulla distribuzione target. L'ABC-SMC costruisce distribuzioni intermedie che convergono alla distribuzione a posteriori, risultando computazionalmente più efficiente dell'ABC rejection.</p>
+
+    <h2>Conclusioni e Discussione</h2>
+    <p>L'ABC permette l'inferenza da una vasta classe di modelli altrimenti non disponibili. Tuttavia, ci sono ancora sfide da affrontare, come:</p>
+    <ul>
+        <li>Ottenere limiti di errore esatti per tolleranze positive e dimensioni del campione finite</li>
+        <li>Sviluppare un approccio automatizzato per la costruzione e la selezione delle statistiche di sintesi</li>
+        <li>Affrontare le limitazioni imposte da dataset di grandi dimensioni o modelli complessi</li>
+    </ul>
+
+    <h2>Fonti</h2>
+    <ul>
+        <li><a href="https://arxiv.org/pdf/1101.0955.pdf">arXiv:1101.0955</a></li>
+        <li><a href="https://github.com/pblischak/approximate_bayes">GitHub: approximate_bayes</a></li>
+        <li>Tutorial on ABC rejection and ABC SMC for parameter estimation and model selection, Tina Toni, Michael P. H. Stumpf, 2009</li>
+        <li><a href="https://www.research.unipd.it/retrieve/e14fb26f-fbf3-3de1-e053-1705fe0ac030/erlis_ruli_tesi.pdf">Tesi di Erlis Ruli</a></li>
+        <li><a href="https://youtu.be/IMMWegIISRg">Video YouTube</a></li>
+        <li><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002803">Articolo PLoS Computational Biology</a></li>
+    </ul>
+</body>
+</html>
