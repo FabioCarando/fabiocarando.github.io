@@ -1,4 +1,3 @@
-# fabiocarando.github.io
 # Progetti di Ricerca
 
 
