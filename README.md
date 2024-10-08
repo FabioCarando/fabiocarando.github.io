@@ -9,11 +9,13 @@ Visita il mio portfolio: [https://fabiocarando.github.io](https://fabiocarando.g
 
 ## 📊 Progetti in Evidenza
 
+- Implementazione di un 
 - **Approximate Bayesian Computational Method - Computational Statistics**: Questo progetto di ricerca si concentra sull'Approximate Bayesian Computation, un approccio statistico innovativo per affrontare problemi di inferenza bayesiana in situazioni complesse dove il calcolo esatto della distribuzione a posteriori è difficile o impossibile.
+- **Implementazione di modellistica ARIMA/SARIMA/ARIMAX e SARIMAX per la gestione di serie storiche finanziarie di Aziende quotato sullo SP500** - L'obiettivo era valutare facendo previsioni finanziarie l'accuratezza dei modelli. Ovviamente, per ogni tipologia di serie storica sono state valutate tutte le metodologie per valutare la migliore. La scelta dei parametri autoregressivi e di moving average rappresenta uno dei lavori più complessi di questo studio.
 - **Machine Learning per Previsioni Finanziarie**: Implementazione di modelli di deep learning per analisi finanziarie. In particolar modo ho adottato l'utilizzo di reti neurali ricorrenti come la LSTM e reti convoluzionali come la CNN. La selezione dei migliori valori per i parametri gioca un ruolo fondamentale nell'accuratezza.
 - **Tecniche avanzate di Deep learning per la gestione di anomalie in serie storiche**: Ho dimostrato che l'utilizzo di output di RN combinati tra loro porta ad una maggiore efficienza. Piuttosto di scegliere quale tipo di RN utilizzare, ho dimostrato che adottando più RN differenti combinandone gli output è possibile sfruttare appieno i vantaggi ottenendo un output robusto.
 - **Implementazione di modelli lineari per la predizione del prezzo delle case**: Ho sviluppato un semplice modello di regresisone con l'obiettivo di stimare e calcolare il prezzo di case sulla base di covariate quali (metratura, numero bagni, numero camere da letto, posizione dal centro, vista mare ecc...).
-- 
+
 
 ## 🛠 Linguaggi/software Utilizzati
 
