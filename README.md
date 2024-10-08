@@ -1,4 +1,4 @@
-# Progetti di Ricerca
+# 📊🚀 Progetti di Ricerca 🚀📊
 
 
 Benvenuti nel repository del mio profilo! Questo sito web presenta una selezione dei miei progetti nel campo dell'analisi dati e della statistica.
@@ -12,7 +12,7 @@ Visita il mio portfolio: [https://fabiocarando.github.io](https://fabiocarando.g
 - **Implementazione PDF_ChatBot** - Ho sviluppato un applicativo in grado di svolgere la funzione di un Chatbot. Ho sviluppato l'interfaccia web con Streamlit, PyPDF2 per elaborare i file PDF. Il modello AI che ho implementato è un modello question-answering fornito dalla libreria Transformers di Hugging Face. Nello specifico il codice usa la funzione pipeline("question-answering"). So che il modello e l'implementazione può essere migliorata ed è quello che faro nel prossimo progetto.
 - **Approximate Bayesian Computational Method - Computational Statistics**: Questo progetto di ricerca si concentra sull'Approximate Bayesian Computation, un approccio statistico innovativo per affrontare problemi di inferenza bayesiana in situazioni complesse dove il calcolo esatto della distribuzione a posteriori è difficile o impossibile.
 
-Ho riassunto le features più rilevanti qui: https://fabiocarando.github.io/abc-project/
+Ho riassunto le features più rilevanti qui:🔗 https://fabiocarando.github.io/abc-project/
   
 - **Implementazione di modellistica ARIMA/SARIMA/ARIMAX e SARIMAX per la gestione di serie storiche finanziarie di Aziende quotato sullo SP500** - L'obiettivo era valutare facendo previsioni finanziarie l'accuratezza dei modelli. Ovviamente, per ogni tipologia di serie storica sono state valutate tutte le metodologie per valutare la migliore. La scelta dei parametri autoregressivi e di moving average rappresenta uno dei lavori più complessi di questo studio.
 - **Machine Learning per Previsioni Finanziarie**: Implementazione di modelli di deep learning per analisi finanziarie. In particolar modo ho adottato l'utilizzo di reti neurali ricorrenti come la LSTM e reti convoluzionali come la CNN. La selezione dei migliori valori per i parametri gioca un ruolo fondamentale nell'accuratezza.
@@ -22,13 +22,13 @@ Ho riassunto le features più rilevanti qui: https://fabiocarando.github.io/abc-
 
 ## 🛠 Linguaggi/software Utilizzati
 
-- Strumenti/Linguaggi di analisi dati: Python(VSC), R(Rstudio), SQL(+ DBeaver), SPSS
-- Librerie Python: NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch, Keras, SciPy, MatplotLib, Seaborn, XGBoost
-- Librerie R: dplyr, ggplot2, tidyr, caret, randomForest, glmnet, shiny, data.table
-- HTML5 e CSS3 per le strutture e lo stile di siti internt
-- JavaScript per funzionalità interattive
+- 🐍Strumenti/Linguaggi di analisi dati: Python(VSC), R(Rstudio), SQL(+ DBeaver), SPSS
+- 🧠Librerie Python: NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch, Keras, SciPy, MatplotLib, Seaborn, XGBoost
+- 📝Librerie R: dplyr, ggplot2, tidyr, caret, randomForest, glmnet, shiny, data.table
+- 💻HTML5 e CSS3 per le strutture e lo stile di siti internt
+- 📝JavaScript per funzionalità interattive
 
-# 📊 Migliori libri secondo il mio punto di vista di Statistica, Machine Learning e Deep Learning
+# 🗃️Migliori libri secondo il mio punto di vista di Statistica, Machine Learning e Deep Learning
 
 1. **The Elements of Statistical Learning**: Fondamentale per la comprensione teorica del machine learning statistico.
 https://link.springer.com/book/10.1007/978-0-387-84858-7#:~:text=Book%20Title:%20The%20Elements%20of%20Statistical%20Learning.%20Book%20Subtitle:%20Data
