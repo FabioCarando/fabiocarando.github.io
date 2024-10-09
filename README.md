@@ -1,5 +1,4 @@
-# 📊🚀 Progetti di Ricerca 🚀📊
-
+# Progetti di Ricerca 
 
 Benvenuti nel repository del mio profilo! Questo sito web presenta una selezione dei miei progetti nel campo dell'analisi dati e della statistica.
 
