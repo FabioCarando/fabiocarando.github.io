@@ -27,8 +27,7 @@ Ho riassunto le features più rilevanti qui:🔗 https://fabiocarando.github.io/
 - 💻HTML5 e CSS3 per le strutture e lo stile di siti internt
 - 📝JavaScript per funzionalità interattive
 
-# 🗃️Migliori libri secondo il mio punto di vista di Statistica, Machine Learning e Deep Learning
-
+# 🗃️Libri interessanti
 1. **The Elements of Statistical Learning**: Fondamentale per la comprensione teorica del machine learning statistico.
 https://link.springer.com/book/10.1007/978-0-387-84858-7#:~:text=Book%20Title:%20The%20Elements%20of%20Statistical%20Learning.%20Book%20Subtitle:%20Data
 
