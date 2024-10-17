@@ -8,7 +8,7 @@ Visita il mio portfolio: [https://fabiocarando.github.io](https://fabiocarando.g
 
 ## 📊 Progetti di ricerca personale
 
-- **Implementazione PDF_ChatBot** - Ho sviluppato un applicativo in grado di svolgere la funzione di un Chatbot. Ho sviluppato l'interfaccia web con Streamlit, PyPDF2 per elaborare i file PDF. Il modello AI che ho implementato è un modello question-answering fornito dalla libreria Transformers di Hugging Face. Nello specifico il codice usa la funzione pipeline("question-answering"). So che il modello e l'implementazione può essere migliorata ed è quello che faro nel prossimo progetto.
+- **Implementazione PDF_ChatBot** - Ho sviluppato un applicativo in grado di svolgere la funzione di un Chatbot. Ho sviluppato l'interfaccia web con Streamlit, PyPDF2 per elaborare i file PDF. Il modello AI che ho implementato è un modello question-answering fornito dalla libreria Transformers di Hugging Face. Nello specifico il codice usa la funzione pipeline("question-answering"). 
   
 - **Approximate Bayesian Computational Method - Computational Statistics**: Questo progetto di ricerca si concentra sull'Approximate Bayesian Computation, un approccio statistico innovativo per affrontare problemi di inferenza bayesiana in situazioni complesse dove il calcolo esatto della distribuzione a posteriori è difficile o impossibile.
   
