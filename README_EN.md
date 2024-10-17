@@ -1,4 +1,4 @@
-# 📊🚀 Research Projects 🚀📊
+# Research Projects
 
 Welcome to my profile repository! This website presents a selection of my projects in the field of data analysis and statistics.
 
@@ -11,7 +11,6 @@ Visit my portfolio: [https://fabiocarando.github.io](https://fabiocarando.github
 - **PDF_ChatBot Implementation** - I developed an application capable of functioning as a Chatbot. I developed the web interface with Streamlit, PyPDF2 for processing PDF files. The AI model I implemented is a question-answering model provided by the Transformers library from Hugging Face. Specifically, the code uses the pipeline("question-answering") function. I know that the model and implementation can be improved, and that's what I'll do in the next project.
 - **Approximate Bayesian Computational Method - Computational Statistics**: This research project focuses on Approximate Bayesian Computation, an innovative statistical approach to address Bayesian inference problems in complex situations where exact computation of the posterior distribution is difficult or impossible.
 
-I've summarized the most relevant features here: 🔗 https://fabiocarando.github.io/abc-project/
 
 - **Implementation of ARIMA/SARIMA/ARIMAX and SARIMAX modeling for managing financial time series of companies listed on the S&P500** - The objective was to evaluate the accuracy of the models by making financial forecasts. Obviously, for each type of time series, all methodologies were evaluated to determine the best one. The selection of autoregressive and moving average parameters represents one of the most complex aspects of this study.
 - **Machine Learning for Financial Forecasting**: Implementation of deep learning models for financial analysis. In particular, I adopted the use of recurrent neural networks such as LSTM and convolutional networks like CNN. The selection of the best parameter values plays a fundamental role in accuracy.
