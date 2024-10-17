@@ -14,7 +14,7 @@ Visita il mio portfolio: [https://fabiocarando.github.io](https://fabiocarando.g
   
 - **Implementazione di modellistica ARIMA/SARIMA/ARIMAX e SARIMAX per la gestione di serie storiche finanziarie di Aziende quotato sullo SP500** - L'obiettivo era valutare facendo previsioni finanziarie l'accuratezza dei modelli. Ovviamente, per ogni tipologia di serie storica sono state valutate tutte le metodologie per valutare la migliore. La scelta dei parametri autoregressivi e di moving average rappresenta uno dei lavori più complessi di questo studio.
   
-- **Machine Learning per Previsioni Finanziarie**: Implementazione di modelli di deep learning per analisi finanziarie. In particolar modo ho adottato l'utilizzo di reti neurali ricorrenti come la LSTM e reti convoluzionali come la CNN. La selezione dei migliori valori per i parametri gioca un ruolo fondamentale nell'accuratezza.
+- **Machine Learning per Previsioni Finanziarie**: Implementazione di modelli di deep learning per analisi finanziarie. In particolar modo ho adottato l'utilizzo di reti neurali ricorrenti come la LSTM e reti convoluzionali come la CNN. La selezione dei migliori valori per i parametri gioca un ruolo fondamentale nell'accuratezza. 
   
 - **Tecniche avanzate di Deep learning per la gestione di anomalie in serie storiche**: Ho dimostrato che l'utilizzo di output di LSTM e CNN combinati tra loro porta ad una maggiore efficienza. Piuttosto di scegliere quale tipo di RN utilizzare, ho dimostrato che adottando più tipologie di RN differenti combinandone gli output è possibile sfruttare appieno i vantaggi ottenendo un output robusto.
   
