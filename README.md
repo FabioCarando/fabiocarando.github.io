@@ -16,7 +16,7 @@ Visita il mio portfolio: [https://fabiocarando.github.io](https://fabiocarando.g
   
 - **Machine Learning per Previsioni Finanziarie**: Implementazione di modelli di deep learning per analisi finanziarie. In particolar modo ho adottato l'utilizzo di reti neurali ricorrenti come la LSTM e reti convoluzionali come la CNN. La selezione dei migliori valori per i parametri gioca un ruolo fondamentale nell'accuratezza.
   
-- **Tecniche avanzate di Deep learning per la gestione di anomalie in serie storiche**: Ho dimostrato che l'utilizzo di output di RN combinati tra loro porta ad una maggiore efficienza. Piuttosto di scegliere quale tipo di RN utilizzare, ho dimostrato che adottando più RN differenti combinandone gli output è possibile sfruttare appieno i vantaggi ottenendo un output robusto.
+- **Tecniche avanzate di Deep learning per la gestione di anomalie in serie storiche**: Ho dimostrato che l'utilizzo di output di LSTM e CNN combinati tra loro porta ad una maggiore efficienza. Piuttosto di scegliere quale tipo di RN utilizzare, ho dimostrato che adottando più tipologie di RN differenti combinandone gli output è possibile sfruttare appieno i vantaggi ottenendo un output robusto.
   
 - **Implementazione di modelli lineari per la predizione del prezzo delle case**: Ho sviluppato un semplice modello di regresisone con l'obiettivo di stimare e calcolare il prezzo di case sulla base di covariate quali (metratura, numero bagni, numero camere da letto, posizione dal centro, vista mare ecc...).
 
