@@ -1,1 +1,304 @@
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+from typing import Tuple, Optional
 
+class SWANet(nn.Module):
+    def __init__(
+        self, 
+        input_dim: int, 
+        hidden_dim: int = 64, 
+        num_layers: int = 2, 
+        wavelet_levels: int = 4, 
+        dropout_rate: float = 0.3
+    ):
+        """
+        Modello SWANet per il rilevamento di rotture strutturali
+        
+        Args:
+        - input_dim: Dimensione delle features di input (tipicamente 2 per coppie di azioni)
+        - hidden_dim: Dimensionalità degli strati nascosti
+        - num_layers: Numero di layer LSTM
+        - wavelet_levels: Numero di livelli di decomposizione wavelet
+        - dropout_rate: Tasso di dropout per regolarizzazione
+        """
+        super(SWANet, self).__init__()
+        
+        # Trasformata Wavelet simulata con Convoluzione 1D
+        self.wavelet_transform = nn.ModuleList([
+            nn.Conv1d(input_dim, input_dim, kernel_size=2**i, stride=2**i, padding=0)
+            for i in range(wavelet_levels)
+        ])
+        
+        # Strati CNN per estrazione features
+        self.cnn_layers = nn.Sequential(
+            nn.Conv1d(input_dim * wavelet_levels, 32, kernel_size=3, padding=1),
+            nn.BatchNorm1d(32),
+            nn.ReLU(),
+            nn.Dropout(dropout_rate),
+            nn.MaxPool1d(kernel_size=2),
+            nn.Conv1d(32, 64, kernel_size=3, padding=1),
+            nn.BatchNorm1d(64),
+            nn.ReLU(),
+            nn.Dropout(dropout_rate),
+            nn.MaxPool1d(kernel_size=2)
+        )
+        
+        # Layer LSTM
+        self.lstm = nn.LSTM(
+            input_size=64, 
+            hidden_size=hidden_dim, 
+            num_layers=num_layers, 
+            batch_first=True,
+            dropout=dropout_rate
+        )
+        
+        # Rilevatore di rotture strutturali
+        self.break_detector = nn.Sequential(
+            nn.Linear(hidden_dim, 64),
+            nn.BatchNorm1d(64),
+            nn.ReLU(),
+            nn.Dropout(dropout_rate),
+            nn.Linear(64, 1),
+            nn.Sigmoid()
+        )
+    
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """
+        Passaggio in avanti del modello SWANet
+        
+        Args:
+        - x: Tensore di input di shape (batch_size, sequence_length, input_dim)
+        
+        Returns:
+        - Probabilità di rottura strutturale
+        """
+        try:
+            # Trasformata Wavelet
+            wavelet_features = []
+            for wavelet_layer in self.wavelet_transform:
+                wavelet_out = wavelet_layer(x.permute(0, 2, 1))
+                wavelet_features.append(wavelet_out)
+            
+            # Concatenazione features wavelet
+            wavelet_concat = torch.cat(wavelet_features, dim=1)
+            
+            # Estrazione features CNN
+            cnn_features = self.cnn_layers(wavelet_concat)
+            
+            # Ridimensionamento per LSTM
+            lstm_input = cnn_features.permute(0, 2, 1)
+            
+            # Elaborazione LSTM
+            lstm_out, _ = self.lstm(lstm_input)
+            
+            # Ultimo time step
+            last_timestep = lstm_out[:, -1, :]
+            
+            # Probabilità rottura strutturale
+            break_prob = self.break_detector(last_timestep)
+            
+            return break_prob
+        
+        except Exception as e:
+            print(f"Errore nel passaggio forward: {e}")
+            raise
+
+def preparazione_dati(
+    stock1: pd.Series, 
+    stock2: pd.Series, 
+    window_size: int = 50, 
+    test_size: float = 0.2, 
+    random_state: Optional[int] = 42
+) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    """
+    Preparazione dei dati per il modello SWANet
+    
+    Args:
+    - stock1, stock2: Serie pandas dei prezzi delle azioni
+    - window_size: Dimensione della finestra mobile
+    - test_size: Proporzione di dati per il test set
+    - random_state: Seme per riproducibilità
+    
+    Returns:
+    - Tensori di training e test per input e labels
+    """
+    # Assicura stessa lunghezza
+    min_length = min(len(stock1), len(stock2))
+    stock1 = stock1[:min_length]
+    stock2 = stock2[:min_length]
+    
+    # Normalizzazione dati
+    scaler = MinMaxScaler()
+    dati_normalizzati = scaler.fit_transform(np.column_stack([stock1, stock2]))
+    
+    # Creazione finestre scorrevoli
+    X, y = [], []
+    for i in range(len(dati_normalizzati) - window_size):
+        finestra = dati_normalizzati[i:i+window_size]
+        X.append(finestra)
+        
+        # Esempio semplice di label (da personalizzare)
+        # Considera rottura se c'è un cambiamento significativo
+        label = 1 if np.std(finestra[:,0]) > np.mean(finestra[:,0]) * 0.1 else 0
+        y.append(label)
+    
+    # Conversione a tensori
+    X = torch.FloatTensor(X)
+    y = torch.FloatTensor(y).unsqueeze(1)
+    
+    # Split training/test
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=test_size, random_state=random_state
+    )
+    
+    return X_train, X_test, y_train, y_test
+
+def train_swanet(
+    model: nn.Module, 
+    X_train: torch.Tensor, 
+    y_train: torch.Tensor, 
+    epochs: int = 100, 
+    learning_rate: float = 0.001,
+    device: Optional[torch.device] = None
+) -> nn.Module:
+    """
+    Addestramento del modello SWANet
+    
+    Args:
+    - model: Modello SWANet
+    - X_train: Dati di training
+    - y_train: Etichette di training
+    - epochs: Numero di epoche di addestramento
+    - learning_rate: Learning rate dell'ottimizzatore
+    - device: Dispositivo di calcolo (CPU/GPU)
+    
+    Returns:
+    - Modello addestrato
+    """
+    # Selezione dispositivo
+    if device is None:
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    
+    # Sposta modello e dati sul dispositivo
+    model.to(device)
+    X_train = X_train.to(device)
+    y_train = y_train.to(device)
+    
+    # Configurazione loss e ottimizzatore
+    criterion = nn.BCELoss()
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    
+    # Migliore modello
+    miglior_loss = float('inf')
+    modello_migliore = None
+    
+    for epoch in range(epochs):
+        model.train()
+        
+        # Forward pass
+        outputs = model(X_train)
+        loss = criterion(outputs, y_train)
+        
+        # Backward pass e ottimizzazione
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+        # Salvataggio miglior modello
+        if loss.item() < miglior_loss:
+            miglior_loss = loss.item()
+            modello_migliore = model.state_dict().copy()
+        
+        # Logging
+        if epoch % 10 == 0:
+            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+    
+    # Ripristino migliore modello
+    if modello_migliore is not None:
+        model.load_state_dict(modello_migliore)
+    
+    return model
+
+def valutazione_modello(
+    model: nn.Module, 
+    X_test: torch.Tensor, 
+    y_test: torch.Tensor,
+    soglia: float = 0.5
+) -> dict:
+    """
+    Valutazione delle performance del modello
+    
+    Args:
+    - model: Modello SWANet addestrato
+    - X_test: Dati di test
+    - y_test: Etichette di test
+    - soglia: Soglia per classificazione
+    
+    Returns:
+    - Metriche di valutazione
+    """
+    model.eval()
+    with torch.no_grad():
+        predictions = model(X_test)
+        predicted_labels = (predictions > soglia).float()
+        
+        # Calcolo metriche
+        accuracy = (predicted_labels == y_test).float().mean()
+        tp = ((predicted_labels == 1) & (y_test == 1)).float().sum()
+        fp = ((predicted_labels == 1) & (y_test == 0)).float().sum()
+        fn = ((predicted_labels == 0) & (y_test == 1)).float().sum()
+        
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+        
+        return {
+            'accuracy': accuracy.item(),
+            'precision': precision.item(),
+            'recall': recall.item(),
+            'f1_score': f1_score
+        }
+
+def main():
+    # Simulazione di dati di azioni cointegrate
+    np.random.seed(42)
+    stock1 = pd.Series(np.cumsum(np.random.randn(500)) + 100)
+    stock2 = pd.Series(stock1 * 0.9 + np.random.randn(500) * 5 + 10)
+    
+    try:
+        # Preparazione dati
+        X_train, X_test, y_train, y_test = preparazione_dati(stock1, stock2)
+        
+        # Inizializzazione modello
+        model = SWANet(
+            input_dim=2,  # Due azioni
+            hidden_dim=64, 
+            num_layers=2,
+            dropout_rate=0.3
+        )
+        
+        # Addestramento modello
+        model_addestrato = train_swanet(model, X_train, y_train)
+        
+        # Valutazione
+        metriche = valutazione_modello(model_addestrato, X_test, y_test)
+        print("\nMetriche di Valutazione:")
+        for metrica, valore in metriche.items():
+            print(f"{metrica.capitalize()}: {valore:.4f}")
+        
+        # Predizione probabilità rotture
+        with torch.no_grad():
+            probabilita_rotture = model_addestrato(X_test)
+            print("\nProbabilità Rotture Strutturali (primi 10):")
+            print(probabilita_rotture[:10])
+    
+    except Exception as e:
+        print(f"Errore durante l'esecuzione: {e}")
+
+if __name__ == "__main__":
+    main()
