@@ -1,0 +1,53 @@
+# 📈 Rilevamento Rotture Strutturali
+
+## 🔍 Panoramica del Progetto
+
+SWANet (Switching Wavelet Autoencoder Network) è un innovativo modello di deep learning progettato per identificare e prevedere rotture strutturali nelle serie temporali finanziarie, con un focus specifico sulle coppie di azioni cointegrate.
+
+### 🎯 Obiettivi Principali
+- Rilevare cambiamenti significativi nelle relazioni di cointegrazione tra azioni
+- Utilizzare tecniche avanzate di deep learning per analisi finanziaria
+- Fornire un framework flessibile per l'analisi di serie temporali
+
+## 🧠 Architettura del Modello
+
+Il modello SWANet combina quattro componenti chiave:
+
+1. **Trasformata Wavelet**: Cattura features multi-scala
+2. **Strati Convoluzionali (CNN)**: Estrazione di caratteristiche spaziali
+3. **Reti LSTM**: Apprendimento di dipendenze temporali
+4. **Rilevatore di Rotture Strutturali**: Stima probabilità di discontinuità
+
+### 🛠 Tecnologie Utilizzate
+- PyTorch
+- NumPy
+- Pandas
+- Scikit-learn
+
+## 🚀 Funzionalità Principali
+
+- Preprocessing automatico dei dati finanziari
+- Supporto per training su CPU/GPU
+- Valutazione del modello con metriche dettagliate
+- Gestione flessibile di diverse configurazioni
+
+## 📊 Metriche di Valutazione
+
+Il modello calcola:
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+
+## 🔮 Casi d'Uso
+
+- Trading algoritmico
+- Gestione del rischio
+- Analisi di portafoglio
+- Ricerca quantitativa
+
+## 📌 Limitazioni Attuali
+
+- Richiede dati di training etichettati
+- Performance dipendono dalla qualità dei dati
+- Necessità di fine-tuning per specifici scenari finanziari
