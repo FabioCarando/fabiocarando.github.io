@@ -1,114 +1,169 @@
 # Fabio Carando
 
-**Data Scientist · AI & Automation · Pianist**
+### I build things with data.
+
+**Data Scientist · AI · Automation · Product Builder**
+
+Turning messy processes, repetitive work and raw data into tools people actually use.
 
 > Data Scientist passionate about music, or pianist passionate about data?
 > Either way, I spend most of my time pressing keys.
 
-I build data products, automation tools and AI-powered applications designed to solve real problems.
+---
 
-My focus is simple: **find inefficient processes and build better ways to run them.**
+## `$ whoami`
+
+```text
+> Data Scientist
+> AI & Automation Builder
+> Pianist
+> Currently turning boring workflows into products.
+```
+
+I work at the intersection of **data, technology and business**.
+
+I like taking a problem from *"we've always done it this way"* to a working product — from the data layer and business logic to the interface and deployment.
 
 ---
 
-## What I do
+## Currently building
 
-I work across the full lifecycle of data products — from understanding the business problem to designing, building and deploying the solution.
-
-My main areas of interest are:
-
-* **Data Science & Machine Learning**
-* **AI & LLM Applications**
-* **Process Automation**
-* **Data Products & Internal Tools**
-* **Analytics & Decision Support**
-
----
-
-## Selected Projects
-
-### WorkLens
+### ⚡ WorkLens
 
 **Find the work worth automating.**
 
-A tool designed to identify repetitive activities inside organizations, measure where time is being spent and highlight the best opportunities for automation.
+A tool that helps organizations identify repetitive work, quantify the time being lost and discover the best opportunities for automation.
 
-`Python` `Streamlit` `Data Analysis` `Automation`
+`Python` · `Streamlit` · `Analytics` · `Automation`
 
----
-
-### Tenuta Monteromola
-
-Sales and inventory management application built for a small Italian wine and honey producer.
-
-It handles sales, inventory, pricing, historical transactions and business performance through a simple mobile-first interface.
-
-`Next.js` `TypeScript` `Supabase` `Vercel`
+**→ [Explore WorkLens](LINK_TO_REPOSITORY)**
 
 ---
 
-### Subscription Tracker
+### 🍷 Tenuta Monteromola
 
-A minimal application for tracking recurring subscriptions and monthly expenses.
+**From spreadsheets to a real operating system for a small producer.**
 
-Designed around one idea: understanding monthly commitments shouldn't require a spreadsheet.
+A mobile-first application for managing sales, inventory, pricing, transactions and business performance for an Italian wine and honey producer.
 
-`Next.js` `TypeScript` `Supabase`
+`Next.js` · `TypeScript` · `Supabase` · `Vercel`
 
----
-
-### Data Science Challenges
-
-An experimental project based on practical Data Science challenges built around realistic business scenarios and datasets.
-
-`Python` `Pandas` `Machine Learning` `Data Science`
+**→ [Explore the project](LINK_TO_REPOSITORY)**
 
 ---
 
-## Tech
+### 💳 Subscription Tracker
 
-**Data & AI**
-`Python` · `SQL` · `Pandas` · `Scikit-learn` · `Machine Learning` · `LLMs` · `RAG`
+**Know where your money goes before it goes.**
 
-**Analytics**
-`Power BI` · `Streamlit`
+A minimal application for tracking subscriptions, recurring expenses and monthly spending.
 
-**Development**
-`Next.js` · `React` · `TypeScript` · `Supabase`
+No complicated budgeting. No spreadsheets. Just the numbers that matter.
 
-**Tools & Cloud**
-`Git` · `GitHub` · `Vercel` · `Google Cloud Platform`
+`Next.js` · `TypeScript` · `Supabase`
+
+**→ [Explore the project](LINK_TO_REPOSITORY)**
 
 ---
 
-## One principle
+## 🧪 Fabio's Lab
+
+Not everything needs to become a startup.
+
+This is where I experiment with ideas, datasets, algorithms and small tools simply because I want to know:
+
+***"Could this work?"***
+
+Currently experimenting with:
+
+`AI Agents` · `LLMs` · `RAG` · `Forecasting` · `Automation` · `Data Products` · `Machine Learning`
+
+---
+
+## How I build
+
+```text
+01  Find something inefficient
+        ↓
+02  Understand why it's inefficient
+        ↓
+03  Remove what doesn't need to exist
+        ↓
+04  Automate what remains
+        ↓
+05  Add AI only if it actually helps
+        ↓
+06  Ship it
+```
 
 I don't believe every problem needs AI.
 
 Sometimes the right solution is a machine learning model.
+
 Sometimes it's an automation.
+
 Sometimes it's a database and twenty lines of Python.
 
-The interesting part is figuring out **which one**.
+**The interesting part is knowing which one.**
 
 ---
 
-## Beyond Data
+## Stack
 
-I'm also a pianist, mainly playing **jazz, funk and fusion**.
+```text
+DATA        Python · SQL · Pandas · NumPy
+ML / AI     Scikit-learn · LLMs · RAG
+ANALYTICS   Power BI · Streamlit
+BUILD       Next.js · React · TypeScript
+DATA LAYER  Supabase · SQL
+CLOUD       Google Cloud Platform · Vercel
+TOOLS       Git · GitHub · DBeaver
+```
 
-Data and music turned out to have quite a lot in common: patterns, structure, improvisation — and knowing when breaking the rules makes things better.
+---
+
+## Data × Music
+
+I've been playing piano for most of my life.
+
+Jazz, funk and fusion taught me something surprisingly useful for technology:
+
+**Learn the structure. Understand the patterns. Then know when to break them.**
+
+Data Science and music aren't that different.
+
+Both are about finding structure inside noise.
+
+---
+
+## What I'm interested in
+
+I'm particularly interested in problems where:
+
+* people are wasting hours on repetitive work;
+* important decisions are still made through messy spreadsheets;
+* data exists but nobody is really using it;
+* an internal process could become a proper product;
+* AI can solve a real problem rather than simply being added because it's AI.
+
+Those are usually the fun ones.
 
 ---
 
 ## Let's build something
 
-I'm always interested in interesting problems involving **Data Science, AI, automation and data products**.
+If you're working on an interesting problem involving **Data Science, AI, automation or data products**, I'd love to hear about it.
 
-If you're building something ambitious — or simply have a process that shouldn't still be manual — feel free to reach out.
-
-**GitHub:** [FabioCarando](https://github.com/FabioCarando)
+**→ [LinkedIn](YOUR_LINKEDIN_URL)**
+**→ [GitHub](https://github.com/FabioCarando)**
 
 ---
 
-<sub>Somewhere between Python scripts, SQL queries and piano rehearsals.</sub>
+```text
+$ status
+
+building things.
+breaking things.
+learning why they broke.
+building them better.
+```
