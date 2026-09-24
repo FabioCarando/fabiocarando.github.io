@@ -1,0 +1,81 @@
+<svg width="1000" height="280"
+     viewBox="0 0 1000 280"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .name {
+      font: 700 52px monospace;
+      fill: #ffffff;
+      letter-spacing: 8px;
+    }
+
+    .subtitle {
+      font: 18px monospace;
+      fill: #8b949e;
+      letter-spacing: 4px;
+    }
+
+    .terminal {
+      font: 15px monospace;
+      fill: #8b949e;
+    }
+
+    .cursor {
+      fill: #ffffff;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .line {
+      stroke: #30363d;
+      stroke-width: 1;
+    }
+
+  </style>
+
+  <rect width="100%" height="100%" fill="#0d1117"/>
+
+  <line
+    x1="80"
+    y1="70"
+    x2="920"
+    y2="70"
+    class="line"
+  />
+
+  <text
+    x="500"
+    y="140"
+    text-anchor="middle"
+    class="name">
+    FABIO CARANDO
+  </text>
+
+  <text
+    x="500"
+    y="180"
+    text-anchor="middle"
+    class="subtitle">
+    DATA / AI / AUTOMATION
+  </text>
+
+  <text
+    x="365"
+    y="230"
+    class="terminal">
+    fabio@github:~$ build something
+  </text>
+
+  <rect
+    x="635"
+    y="216"
+    width="9"
+    height="18"
+    class="cursor"
+  />
+
+</svg>
