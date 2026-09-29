@@ -47,6 +47,22 @@ It handles sales, inventory, pricing, historical transactions and business perfo
 
 ---
 
+### MarketProductIntelligence
+
+Multi-source web scraper with universal architecture.
+
+A production-ready web scraping system designed to extract product data from multiple Italian e-commerce sites simultaneously. Features a universal config-driven architecture, PostgreSQL database for historical tracking, automated validation, dynamic Excel report generation and scheduled execution via cron jobs.
+
+Built to solve: E-commerce price monitoring, competitive analysis, and product intelligence gathering across multiple sources with zero manual work.
+
+Architecture includes: ScraperFactory pattern, multi-threaded async scraping, data consolidation, validation pipeline, and analytics engine. Fully documented with 6-layer architecture diagrams and comprehensive database schema (8 tables with relationships).
+
+Python Playwright SQLAlchemy PostgreSQL Async Data Pipeline Web Scraping Automation Excel/openpyxl Cron Scheduling
+
+GitHub: MarketProductIntelligence
+
+---
+
 ### Subscription Tracker
 
 A minimal application for tracking recurring subscriptions and monthly expenses.
