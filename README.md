@@ -57,7 +57,7 @@ Built to solve: E-commerce price monitoring, competitive analysis, and product i
 
 Architecture includes: ScraperFactory pattern, multi-threaded async scraping, data consolidation, validation pipeline, and analytics engine. Fully documented with 6-layer architecture diagrams and comprehensive database schema (8 tables with relationships).
 
-Python Playwright SQLAlchemy PostgreSQL Async Data Pipeline Web Scraping Automation Excel/openpyxl Cron Scheduling
+`Python` `Playwright` `SQLAlchemy` `PostgreSQL` `Async` `Data Pipeline` `Web Scraping Automation` `Excel/openpyxl` `Cron Scheduling`
 
 GitHub: MarketProductIntelligence
 
