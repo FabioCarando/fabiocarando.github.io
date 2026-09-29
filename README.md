@@ -113,7 +113,7 @@ The interesting part is figuring out **which one**.
 
 I'm also a pianist, mainly playing **jazz, funk and fusion**.
 
-Data and music turned out to have quite a lot in common: patterns, structure, improvisation — and knowing when breaking the rules makes things better.
+Data and music turned out to have quite a lot in common: patterns, structure, improvisation and knowing when breaking the rules makes things better.
 
 ---
 
@@ -121,7 +121,7 @@ Data and music turned out to have quite a lot in common: patterns, structure, im
 
 I'm always interested in interesting problems involving **Data Science, AI, automation and data products**.
 
-If you're building something ambitious — or simply have a process that shouldn't still be manual — feel free to reach out.
+If you're building something ambitious — or simply have a process that shouldn't still be manual, feel free to reach out.
 
 **GitHub:** [FabioCarando](https://github.com/FabioCarando)
 
